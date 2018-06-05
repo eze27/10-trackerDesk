@@ -1,0 +1,49 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Actuarios</a>
+</nav>
+
+
+<div class="row pad-10">
+        <div class="col-2">
+                <h3>Actuarios</h3>
+        
+                <div class="list-group">
+        
+                    <a href="#" (click)="seguir( taxista )" *ngFor="let taxista of taxistas" class="list-group-item list-group-item-action">
+                        {{ taxista.nombre }}
+                    </a>
+        
+                    <br>
+                    <button *ngIf="siguiendoNombre" (click)="dejarDeSeguir()" class="btn btn-primary btn-block">
+                        Dejar de seguir
+                    </button>
+        
+        
+            </div>
+        
+            </div>
+    <div class="col-10">
+       
+
+        <agm-map [latitude]="lat" [longitude]="lng"  [zoom]='18' [streetViewControl]="true" [mapTypeControl]="true" [fullscreenControl]="true" [styles]="styles">
+            <agm-marker *ngFor="let taxista of taxistas" [latitude]="taxista.lat" [longitude]="taxista.lng">
+                
+                <agm-info-window>
+                        <div class="card bg-light" style="max-width: 18rem;border:none;background-color: aliceblue;">
+                                <div class="card-header" style="background-color: #fff;">{{taxista.nombre}}</div>
+                                <div class="card-body" style="background-color: #fff;">
+                                  <h5 class="card-title">Datos</h5>
+                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                              </div>
+                    <agm-circle [latitude]="taxista.lat" [longitude]="taxista.lng" [radius]="1.5" [fillOpacity]="0.50" [fillColor]="'#00A19A'"></agm-circle>
+                  </agm-info-window>
+            </agm-marker>
+        </agm-map>
+
+    </div>
+
+
+
+
+</div>

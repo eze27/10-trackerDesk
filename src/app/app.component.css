@@ -1,0 +1,23 @@
+agm-map {
+    height: 850px;
+}
+element.style {
+     max-width: 0rem; 
+}
+element.style {
+     top: 0px; 
+     position: absolute; 
+     left: 0px; 
+    width: 311px;
+}
+.pad-10 {
+    padding: 0px;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: 0px; 
+}
