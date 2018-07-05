@@ -346,7 +346,7 @@ export class AppComponent {
 ];
 
   constructor(db: AngularFirestore) {
-    db.collection('user').valueChanges()
+    db.collection('usuarios').valueChanges()
         .subscribe( ( data: Taxista[] ) => {
 
           this.taxistas = data;
